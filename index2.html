@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title># 7 Days of Code: 2nd day</title>
+</head>
+
+<body>
+    <p>Olá <span id="id_nome"></span>, você tem <span id="id_idade"></span> anos e já está aprendendo <span
+            id="id_ling"></span></p>
+
+    <script>
+
+        let nome = prompt("Qual o seu nome?");
+        let idade = prompt("Quantos anos você tem?")
+        let linguagem = prompt("Qual a linguagem de programação você está estudando?")
+
+        document.getElementById("id_nome").innerHTML = nome;
+        document.getElementById("id_idade").innerHTML = idade;
+        document.getElementById("id_ling").innerHTML = linguagem;
+    </script>
+
+    <script>
+        let questao = prompt("Você gosta de estudar " + linguagem + " ? Responda com o número 1 para SIM ou 2 para NÃO")
+
+        if (questao == 1) {
+            alert("Muito bom! Continue estudando e você terá muito sucesso.")
+        } else {
+            alert("Ahh que pena... Já tentou aprender outras linguagens?")
+        }
+    </script>
+</body>
+
+</html>
