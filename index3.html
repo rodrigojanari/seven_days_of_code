@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // FASE1
+        const fase1 = prompt(">>>>>>>>>>>>>>> QUESTÃO 1 <<<<<<<<<<<<<<<" + "\n" + "Qual a área você mais gosta de estudar?" + "\n" + " [1] Front-End" + "\n" + " [2] Back-End?");
+
+        if (fase1 === 1) {
+
+            // FASE2
+            const fase2 = prompt(">>>>>>>>>>>>>>> QUESTÃO 2 <<<<<<<<<<<<<<<" + "\n" + "Dentro da área de Front-End, o que você mais gosta de estudar?" + "\n" + " [1] React" + "\n" + " [2] Vue?");
+        } else if (fase1 === 2) {
+            const fase2 = prompt(">>>>>>>>>>>>>>> QUESTÃO 2 <<<<<<<<<<<<<<<" + "\n" + "Dentro da área de Back-End, o que você mais gosta de estudar?" + "\n" + " [1] C#" + "\n" + " [2] Java?");
+        } else {
+            alert("Opção inválida");
+        }
+        // FASE 3
+        const fase3 = prompt(">>>>>>>>>>>>>>> QUESTÃO 3 <<<<<<<<<<<<<<<" + "\n" + "Agora escolha se deseja seguir:" + "\n" + " [1] se especializando na área que escolheu (" + fase1 + ")" + "\n" + " [2] se desenvolvendo para se tornar Fullstack");
+
+
+        let msg = prompt("Tem mais alguma tecnologia que você gostaria de aprender? Digite 'ok' em caso positivo.");
+        while (msg === "ok") {
+            let novaTecnologia = prompt("Qual?");
+            alert(`${novaTecnologia} é realmente uma tecnologia muito legal!`)
+            msg = prompt("Tem mais alguma tecnologia que você gostaria de aprender? Digite 'ok' em caso positivo.");
+        }
+    </script>
+</body>
+
+</html>
