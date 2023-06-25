@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title># 7 Days of Code: 6th day</title>
+</head>
+
+<body>
+    <script>
+        let frutas = [];
+        let legumes = [];
+        let outros = [];
+
+        alert("Bem vindo à sua lista de compras!");
+
+        let adicionaItens = 1;
+        while (adicionaItens !== 2) {
+            if (frutas.length === 0 && legumes.length === 0 && outros.length === 0) {
+                adicionaItens = parseInt(prompt("Você deseja adicionar itens à sua lista de compras? \n[1] Sim \n[2] Não"));
+            } else {
+                adicionaItens = parseInt(prompt("Você deseja adicionar um item à sua lista de compras? \n[1] Sim \n[2] Não \n[3] Remover item"));
+            }
+            while (adicionaItens !== 1 && adicionaItens !== 2 && adicionaItens !== 3) {
+                alert(`Opção incorreta`);
+                adicionaItens = parseInt(prompt("Você deseja adicionar itens à sua lista de compras? \n[1] Sim \n[2] Não"));
+            }
+
+            if (adicionaItens === 2) {
+                break;
+            }
+
+            if (adicionaItens === 1) {
+                item = prompt("Qual item você deseja adicionar?");
+                categoria = parseInt(prompt("Em qual categoria essa item se classifica?: \n[1] Frutas \n[2] Legumes \n[3] Outros"));
+
+                if (categoria === 1) {
+                    frutas.push(item);
+                } else if (categoria === 2) {
+                    legumes.push(item);
+                } else if (categoria === 3) {
+                    outros.push(item);
+                } else {
+                    alert("Categoria incorreta.")
+                }
+            } else if (adicionaItens === 3) {
+                if ((frutas.length === 0 && legumes.length === 0 && outros.length === 0)) {
+                    alert("Não é possível remover itens, pois sua lista de compras está vazia.")
+                } else {
+                    removeItens = prompt(`Informe o item que você deseja remover?: \n- Frutas: ${frutas} \n- Legumes: ${legumes}\n- Outros: ${outros}`);
+                    if (frutas.indexOf(removeItens) != -1) { //indexOf() retorna o primeiro índice em que o elemento foi encontrado no array,  retorna -1 se não achar
+                        frutas.splice(frutas.indexOf(removeItens), 1); //splice() permite alterar o conteúdo do array removendo/substituindo elementos existentes por novos
+                        //nome_array.indexOf(item_procurado), 1) = ,1 indica que se houve mais de um elemento igual no array, irá capturar o primeiro
+                        alert(`O item ${removeItens} foi removido com sucesso!`)
+                    } else if (legumes.indexOf(removeItens) != -1) {
+                        legumes.splice(legumes.indexOf(removeItens), 1);
+                        alert(`O item ${removeItens} foi removido com sucesso!`)
+                    } else if (outros.indexOf(removeItens) != -1) {
+                        outros.splice(outros.indexOf(removeItens), 1);
+                        alert(`O item ${remover} foi removido com sucesso!`)
+                    } else {
+                        alert(`O item não foi encontrado na sua lista de compras.`)
+                    }
+                }
+            }
+        }
+        alert(`LISTA DE COMPRAS:\n- Frutas: ${frutas}\n- Legumes: ${legumes}\n- Outros: ${outros}`);
+    </script>
+</body>
+
+</html>
