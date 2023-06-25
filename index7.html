@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title># 7 Days of Code: 7th day</title>
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+
+    <p>Primeiro Número <input type="text" placeholder="Digite um número" id="id_n1"> </p>
+    <p>Segundo Número <input type="text" placeholder="Digite um número" id="id_n2"> </p>
+
+    <h2>Operação</h2>
+
+    <div>
+        <input type="radio" name="operacao" id="id_soma" value="value_soma">
+        <label for="id_soma">Soma</label>
+    </div>
+
+    <div>
+        <input type="radio" name="operacao" id="id_sub" value="value_sub">
+        <label for="id_sub">Subtração</label>
+    </div>
+
+    <div>
+        <input type="radio" name="operacao" id="od_mult" value="value_mult">
+        <label for="id_mult">Multiplicação</label>
+    </div>
+
+    <div>
+        <input type="radio" name="operacao" id="id_div" value="value_div">
+        <label for="id_div">Divisão</label>
+    </div>
+
+    <p></p>
+    <button onclick="calcula()">Calcular</button>
+
+    <h3>Resultado:<span id="id_res"></span> </h3>
+
+    <script> 
+
+        function calcula() {
+            let n1 = parseFloat(document.getElementById("id_n1").value);
+            let n2 = parseFloat(document.getElementById("id_n2").value);
+
+
+            // obter a operação selecionada
+            let operacao = document.querySelector('input[name="operacao"]:checked').value;
+
+            // efetuar o cáculo
+
+            let resultado = 0 // cria a variável resultado e atribui seu valor como zero
+
+            if (operacao == "value_soma") {
+                resultado = n1 + n2;
+            }
+            else if (operacao == "value_sub") {
+                resultado = n1 - n2;
+            }
+            else if (operacao == "value_mult") {
+                resultado = n1 * n2;
+            }
+            else if (operacao == "value_div") {
+                if (n2 != 0) {
+                    resultado = n1 / n2;
+                }
+                else {
+                    alert('Não é possível dividir por zero!');
+                }
+            } else {
+                alert('Operação inválida')
+            }
+
+            // mostra o resultado
+            document.getElementById("id_res").innerHTML = resultado;
+        }
+
+    </script>
+</body>
+
+</html>
