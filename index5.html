@@ -4,12 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title># 7 Days of Code: 5th day</title>
 </head>
 
 <body>
-   
+    <script>
+        let frutas = [];
+        let legumes = [];
+        let outros = [];
+
+        alert("Bem vindo à sua lista de compras");
+
+        let adicionaItens = 1;
+        while (adicionaItens !== 2) {
+            adicionaItens = parseInt(prompt("Você deseja adicionar itens à sua lista de compras? \n[1] Sim \n[2] Não"));
+
+            while (adicionaItens !== 1 && adicionaItens !== 2) {
+                alert(`Opção incorreta`);
+                adicionaItens = parseInt(prompt("Você deseja adicionar itens à sua lista de compras? \n[1] Sim \n[2] Não"));
+            }
+
+            if (adicionaItens === 2) {
+                break;
+            }
+
+            item = prompt("Qual item você deseja adicionar?");
+            categoria = prompt("Em qual categoria essa item se classifica?: \n[1] Frutas \n[2] Legumes \n[3] Outros");
+
+            if (categoria == 1) {
+                frutas.push(item);
+            } else if (categoria == 2) {
+                legumes.push(item);
+            } else if (categoria == 3) {
+                outros.push(item);
+            } else {
+                alert("Categoria incorreta.")
+            }
+        }
+        alert(`LISTA DE COMPRAS:\n- Frutas: ${frutas}\n- Legumes: ${legumes}\n- Outros: ${outros}`);
+
     </script>
+
+
 
 </body>
 
