@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title># 7 Days of Code: 4th day</title>
+</head>
+
+<body>
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min); //valor x arredondado para cima. Ex.: 8,1 = 9
+            max = Math.floor(max); //valor x arredondado para baixo. Ex.: 4,7 = 4
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        const num = getRandomInt(1, 10,9999999);
+
+        alert("Jogo da advinhação")
+        let tentativa1 = parseInt(prompt("Tente advinhar o número secreto (de 1 a 10:)"));
+        if (tentativa1 !== num) {
+            let tentativa2 = parseInt(prompt("Você não acertou, tente novamente:"));
+            if (tentativa2 !== num) {
+                let tentativa3 = parseInt(prompt("Você não acertou, última tentativa:"));
+                if (tentativa3 !== num) {
+                    alert("Infelizmente você errou, o número secreto é: " + num);
+                } else {
+                    alert("Parabéns, você acertou na terceira tentativa")
+                }
+            } else {
+                alert("Parabéns, você acertou na segunda tentativa")
+            }
+        } else {
+            alert("Parabéns, você acertou de primeira!")
+        }
+    </script>
+
+</body>
+
+</html>
